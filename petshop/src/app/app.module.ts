@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(ROUTES),
   ],
   providers: [],
   bootstrap: [AppComponent]
