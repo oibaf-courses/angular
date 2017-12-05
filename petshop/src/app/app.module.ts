@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { ProductComponent } from './product/product.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -20,7 +22,9 @@ import { ProductComponent } from './product/product.component';
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    ProductComponent
+    ProductComponent,
+    ProductsComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
