@@ -9,6 +9,9 @@
     margin: 60px auto;
     padding: 20px;
     padding-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-shadow: 5px 5px 50px #999999;
   }
   
   #conteudo-contato label {
