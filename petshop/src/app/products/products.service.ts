@@ -14,4 +14,8 @@ export class ProductsService {
     return this.http.get(environment.productsEndpoint);
   }
 
+  get(id: number) {
+    return this.http.get(environment.productsEndpoint + '/' + id);
+  }
+
 }
