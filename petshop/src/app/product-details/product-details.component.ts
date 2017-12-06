@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../products/products.service';
+import { Product, IProduct } from '../products/product.model';
 
 @Component({
   selector: 'ttt-product-details',
@@ -10,14 +11,14 @@ import { ProductsService } from '../products/products.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  private product: any;
+  private product: IProduct;
 
   constructor(private activatedRoute: ActivatedRoute, private productsClient: ProductsService) { }
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params['id'];
     this.productsClient.get(id).subscribe(
-     (data: any) => this.product = data
+     (data: IProduct) => this.product = data
     );
   }
 
