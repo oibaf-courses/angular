@@ -7,7 +7,7 @@
     <h3>Descrição:</h3>
     <p>{{ product.description }}</p>
     <h3>Preço:</h3>
-    <p>{{ product.price | currency }}</p>
+    <p>{{ product.price | currency:"BRL" }}</p>
     <a routerLink="/products">Voltar</a>
 </div>
 </section>
