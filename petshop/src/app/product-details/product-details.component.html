@@ -1,1 +1,13 @@
-<h1>Detalhes do Produto</h1>
+<section class="product-details">
+<div class="product">
+    <h2>Detalhes do produto</h2>
+    <p><img src="{{ product.url }}" target="blank"></p>
+    <h3>Nome:</h3>
+    <p>{{ product.name }}</p>
+    <h3>Descrição:</h3>
+    <p>{{ product.description }}</p>
+    <h3>Preço:</h3>
+    <p>{{ product.price | currency:"BRL" }}</p>
+    <a routerLink="/products">Voltar</a>
+</div>
+</section>

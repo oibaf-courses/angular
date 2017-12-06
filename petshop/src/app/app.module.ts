@@ -12,6 +12,7 @@ import { ROUTES } from './app.routes';
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -29,8 +30,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
+    HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

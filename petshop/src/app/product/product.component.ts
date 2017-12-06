@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Product, IProduct } from '../products/product.model';
 
 @Component({
   selector: 'ttt-product',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() product: any;
+  @Input() product: IProduct = new Product();
 
   constructor() { }
 
