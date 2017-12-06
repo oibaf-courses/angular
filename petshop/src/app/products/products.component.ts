@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  ProductsService
+} from './products.service';
 
 @Component({
   selector: 'ttt-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
+  providers: [ProductsService]
 })
 export class ProductsComponent implements OnInit {
 
-  products: any[] = [
-    { name: 'Ração Pedigree', description: 'A melhor ração de todas!', id: 1},
-    { name: 'Gaiola de Hamster', description: 'Uma prisão de luxo!', id: 2},
-    { name: 'Arranhador para gatos', description: 'Arranhador duradouro!', id: 3},
-    { name: 'Casinha de cachorro', description: 'Casa com dois andares!', id: 4},
-  ];
+  private products: any[];
 
-  constructor() { }
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
+    this.productsService.getAll().subscribe(
+      (data: any[]) => this.products = data,
+      error => {}
+    );
   }
 
 }
