@@ -5,6 +5,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsFormComponent } from './products-form/products-form.component';
+import { LoginComponent } from './login/login.component';
 
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
@@ -20,5 +21,6 @@ export const ROUTES: Routes = [
           { path: ':id', component: ProductDetailsComponent },
       ]
     },
+    { path: 'login', component: LoginComponent },
     { path: '**', redirectTo: 'home' }
 ];

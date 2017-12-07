@@ -16,6 +16,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsFormComponent } from './products-form/products-form.component';
 import { ProductsService } from './products/products.service';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
 
 
 
@@ -29,7 +31,8 @@ import { ProductsService } from './products/products.service';
     ProductComponent,
     ProductsComponent,
     ProductDetailsComponent,
-    ProductsFormComponent
+    ProductsFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { ProductsService } from './products/products.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
