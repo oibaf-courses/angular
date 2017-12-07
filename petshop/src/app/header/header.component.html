@@ -6,10 +6,11 @@
     <div class="clear"></div> <!-- servira como um divisor (clearfix) -->
     <nav id="menu">
       <a id="home" routerLinkActive="active" routerLink="home">home</a>
-      <a id="produtos" routerLinkActive="active" routerLink="products">produtos</a>
-      <a id="galeria" routerLinkActive="active" routerLink="gallery">galeria</a>
-      <a id="servicos" routerLinkActive="active" routerLink="services">serviços</a>
+      <a id="produtos" routerLinkActive="active" routerLink="products">products</a>
+      <a id="servicos" *ngIf="userIsLogged" routerLinkActive="active" routerLink="products/new">new product</a>
       <a id="contato" routerLinkActive="active" routerLink="contact">contato</a>
+      <a id="login" *ngIf="!userIsLogged" routerLinkActive="active" routerLink="login">login</a>
+      <a id="logout" (click)="logout()" *ngIf="userIsLogged" routerLinkActive="active" routerLink="logout">logout</a>
     </nav>
   </div>
 </header>

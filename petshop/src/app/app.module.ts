@@ -18,6 +18,7 @@ import { ProductsFormComponent } from './products-form/products-form.component';
 import { ProductsService } from './products/products.service';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -40,7 +41,7 @@ import { AuthService } from './auth.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductsService, AuthService],
+  providers: [ProductsService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

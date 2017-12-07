@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'ttt-header',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private userIsLogged: boolean;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.userIsLogged = this.authService.isLogged();
+    this.authService.userAuthenticated.subscribe(
+      (data: boolean) => this.userIsLogged = data
+    );
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

@@ -31,7 +31,7 @@
     text-transform: uppercase; /* lowercase - capitalize */
     font-size: 18px;
     display: block;
-    width: 176px;
+    width: 140px;
     float: left;
     margin: 2px;
     text-align: center;
@@ -75,5 +75,12 @@
   }
   #menu #contato:hover {
     background: #cd1fce;
+    transition: background 1s;
+  }
+  #menu #login {
+    border-bottom: 3px solid #942604;
+  }
+  #menu #login:hover {
+    background: #c5170b;
     transition: background 1s;
   }
