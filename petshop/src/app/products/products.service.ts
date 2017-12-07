@@ -26,4 +26,10 @@ export class ProductsService {
     .catch(error => Observable.throw(error));
   }
 
+  create(product: IProduct): Observable<IProduct> {
+    return this.http.post(environment.productsEndpoint, product)
+    .map((data: IProduct) => data)
+    .catch(error => Observable.throw(error));
+  }
+
 }

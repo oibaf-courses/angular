@@ -15,6 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsFormComponent } from './products-form/products-form.component';
+import { ProductsService } from './products/products.service';
 
 
 
@@ -36,6 +37,7 @@ import { ProductsFormComponent } from './products-form/products-form.component';
     HttpClientModule,
     FormsModule
   ],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

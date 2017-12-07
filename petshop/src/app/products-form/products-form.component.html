@@ -1,5 +1,6 @@
 <section class="product-details">
   <form class="products-form">
+    <h3>New product: {{ product.name }}</h3>
     <label for="name">Name:
     <input type="text" id="name" name="name" [(ngModel)]="product.name" #name="ngModel">
     {{ product.name }}
@@ -16,6 +17,6 @@
     <input type="text" id="url" name="url" [(ngModel)]="product.url" #name="ngModel">
     {{ product.url }}
     </label>
-    <button>Submit</button>
+    <button (click)="save()">Submit</button>
   </form>
 </section>

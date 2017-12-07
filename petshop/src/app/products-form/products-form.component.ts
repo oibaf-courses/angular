@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct, Product } from '../products/product.model';
+import { ProductsService } from '../products/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ttt-products-form',
@@ -10,9 +12,15 @@ export class ProductsFormComponent implements OnInit {
 
   private product: IProduct = new Product();
 
-  constructor() { }
+  constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  save() {
+    this.productsService.create(this.product).subscribe(
+      data => this.router.navigate(['/products'])
+    );
   }
 
 }
