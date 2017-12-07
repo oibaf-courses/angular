@@ -1,0 +1,24 @@
+/* CSS da HOME */
+.login-section {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+.login-form {
+    width: 100%;
+    margin-right: 40px;
+    margin-top: 40px;
+    min-height: 150px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    padding: 30px;
+    line-height: 24px;
+    box-shadow: 5px 5px 50px #999999;
+  }
+  
+.login-form  label {
+    display: block;
+}

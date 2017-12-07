@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,11 @@ import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsFormComponent } from './products-form/products-form.component';
+import { ProductsService } from './products/products.service';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -25,13 +31,17 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     ProductComponent,
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductsFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
+  providers: [ProductsService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

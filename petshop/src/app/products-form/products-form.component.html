@@ -1,0 +1,22 @@
+<section class="product-details">
+  <form class="products-form">
+    <h3>New product: {{ product.name }}</h3>
+    <label for="name">Name:
+    <input type="text" id="name" name="name" [(ngModel)]="product.name" #name="ngModel">
+    {{ product.name }}
+    </label>
+    <label for="description">Description:
+    <input type="text" id="description" name="description" [(ngModel)]="product.description" #name="ngModel">
+    {{ product.description }}
+    </label>
+    <label for="price">Price:
+    <input type="text" id="price" name="price" [(ngModel)]="product.price" #name="ngModel">
+    {{ product.price | currency }}
+    </label>
+    <label for="url">URL:
+    <input type="text" id="url" name="url" [(ngModel)]="product.url" #name="ngModel">
+    {{ product.url }}
+    </label>
+    <button (click)="save()">Submit</button>
+  </form>
+</section>
