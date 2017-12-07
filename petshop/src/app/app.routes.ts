@@ -4,6 +4,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductComponent } from './product/product.component';
+import { ProductsFormComponent } from './products-form/products-form.component';
 
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
@@ -15,6 +16,7 @@ export const ROUTES: Routes = [
     { path: 'products',
       children: [
           { path: '', component: ProductsComponent, pathMatch: 'full'},
+          { path: 'new', component: ProductsFormComponent },
           { path: ':id', component: ProductDetailsComponent },
       ]
     },
