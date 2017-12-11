@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ttt-login',
@@ -18,23 +18,36 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: '',
-      password: '',
+      username: this.formBuilder.control('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      password: this.formBuilder.control('', [
+        Validators.required,
+      ]),
     });
   }
 
   doLogin() {
-    const username = this.loginForm.get('username');
-    const password = this.loginForm.get('password');
-    this.authService.login(username.value, password.value).subscribe(
-      (data: boolean) => {
-        if (!data) {
-          alert('Invalid user or password...');
-          return;
+    if (this.loginForm.valid) {
+      this.authService.login(this.username.value, this.password.value).subscribe(
+        (data: boolean) => {
+          if (!data) {
+            alert('Invalid user or password...');
+            return;
+          }
+          this.router.navigate(['/products/new']);
         }
-        this.router.navigate(['/products/new']);
-      }
-    );
+      );
+    }
+  }
+
+  get username() {
+    return this.loginForm.get('username');
+  }
+
+  get password() {
+    return this.loginForm.get('password');
   }
 
 }
