@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProductsFormComponent implements OnInit {
 
-  private product: IProduct = new Product();
+  product: IProduct = new Product();
 
   constructor(private productsService: ProductsService, private router: Router) { }
 

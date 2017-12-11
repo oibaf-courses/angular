@@ -11,7 +11,7 @@ import { Product, IProduct } from '../products/product.model';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  private product: IProduct;
+  product: IProduct;
 
   constructor(private activatedRoute: ActivatedRoute, private productsClient: ProductsService) { }
 
