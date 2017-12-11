@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  productsEndpoint: 'http://localhost:3000/products',
-  usersEndpoint: 'http://localhost:3000/users'
+  productsEndpoint: 'https://petshop-api-qgobahsntk.now.sh/products',
+  usersEndpoint: 'https://petshop-api-qgobahsntk.now.sh/users'
 };
