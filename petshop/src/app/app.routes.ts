@@ -11,10 +11,6 @@ import { AuthGuard } from './guard/auth.guard';
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
-    /*
-    { path: 'products', component: ProductsComponent, pathMatch: 'full'},
-    { path: 'products/:id', component: ProductDetailsComponent},
-    */
     { path: 'products',
       children: [
           { path: '', component: ProductsComponent, pathMatch: 'full'},
@@ -22,6 +18,9 @@ export const ROUTES: Routes = [
           { path: ':id', component: ProductDetailsComponent },
       ]
     },
+    // { path: 'products', component: ProductsComponent, pathMatch: 'full'},
+    // { path: 'products/new', component: ProductsFormComponent, canActivate: [ AuthGuard ], pathMatch: 'full' },
+    // { path: 'products/:id', component: ProductDetailsComponent, pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: '**', redirectTo: 'home' }
 ];
