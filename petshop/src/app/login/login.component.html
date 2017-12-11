@@ -1,0 +1,17 @@
+<section class="login-section">
+  <form [formGroup]="loginForm" class="login-form" (ngSubmit)="doLogin()">
+    <label>
+      Login:
+      <input name="username" formControlName="username" type="text">
+      <span class="error" *ngIf="username.dirty && username.errors?.required">Campo obrigatório</span>
+      <span class="error" *ngIf="username.dirty && username.errors?.minlength">Tamanho mínimo de 4 caracteres</span>
+    </label>
+    <label>
+        Senha:
+        <input name="password" formControlName="password" type="password">
+        <span class="error" *ngIf="password.dirty && password.errors?.required">Campo obrigatório</span>
+      </label>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    {{ loginForm.valid }}
+  </form>
+</section>
